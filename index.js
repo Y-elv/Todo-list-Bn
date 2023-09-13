@@ -3,11 +3,14 @@ import cors from "cors";
 import landingPage from "./controllers/welcome.js"
 import mongoose from "mongoose";
 import dotenv from "dotenv"
+import task from "./routes/route_task.js"
 
 const app=express()
 app.use(cors())
 
 dotenv.config()
+
+app.use("/api/v1/task",task)
 
 const connectToMongdb=()=>{
     mongoose.connect(process.env.MONGLINK)
