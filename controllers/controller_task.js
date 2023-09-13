@@ -112,11 +112,17 @@ const updateTaskById =async (req, res) => {
 }
 const deleteAllTask = async(req, res) => {
     try{
-
+    let result=await TaskModel.deleteMany({})
+    res.status(200).json({
+        message:"all tasks has been deleted",
+        data:result
+    })
     }
     catch(error){
     res.status(500).json({
-        message:"internal error server "
+        message:"Internal error server ",
+        err:error
+
     })
     }
 }
