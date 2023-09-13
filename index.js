@@ -4,9 +4,10 @@ import landingPage from "./controllers/welcome.js"
 import mongoose from "mongoose";
 import dotenv from "dotenv"
 import task from "./routes/route_task.js"
+import swaggerDocs from "./api-docs/swagger.js"
 
 const app=express()
-app.use(cors())
+app.use(cors({origin:"*"}))
 
 dotenv.config()
 
@@ -30,3 +31,5 @@ app.listen(port,()=>{
 connectToMongdb()
 
 })
+
+swaggerDocs(app)

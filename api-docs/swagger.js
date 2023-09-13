@@ -1,6 +1,7 @@
 import swaggerUi from "swagger-ui-express"
 import swaggerJSDoc from "swagger-jsdoc"
-
+import {welcomeRouteDocs} from "./welcome.doc.js"
+import {taskRouteDocs} from "./task.doc.js"
 
 const options = {
     definition: {
