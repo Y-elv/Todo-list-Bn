@@ -3,6 +3,17 @@ const createTask = {
     tags: ['Task'],
     description: "create a task",
     security: [{ apiKey: [] }],
+    parameters: [  
+    {
+        in: 'header',
+        name: 'x-access-token', 
+        required: true,
+        schema: {
+            type: 'string',
+        },
+        description: 'Access token',
+    }
+],
     requestBody: {
         content: {
             "multipart/form-data": {
@@ -10,19 +21,20 @@ const createTask = {
                     type: "object",
                     properties: {
                         title: {
-                            type: "String",
+                            type: "string",
                             
                         },
                         description: {
-                            type:"String",
+                            type:"string",
                            
                         },
                         dueDate: {
-                            type:"Date" ,
+                            type:"string" ,
+                            format: "date-time" 
                             
                         },
                         completed: {
-                            type: "Boolean",
+                            type: "boolean",
                             
                         },
                     }
