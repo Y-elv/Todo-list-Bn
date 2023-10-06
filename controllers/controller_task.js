@@ -1,4 +1,6 @@
 import TaskModel from "../models/model_task.js"
+import generateToken from "../utils/tokenUtils.js"
+
 const createTask = (req, res) => {
    try{
     const data = req.body
@@ -9,6 +11,9 @@ const createTask = (req, res) => {
         dueDate:data.dueDate,
         completed:data.completed,
     })
+
+    taskInstance.appId = req.appId; 
+
     taskInstance.save()
     .then((data)=>{
         res.status(200).json({
