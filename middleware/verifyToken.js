@@ -1,16 +1,19 @@
+import jwt from "jsonwebtoken"
 function verifyToken (req,res,next){
-    const token=req.headers['authorization']
+    const token=req.headers['x-access-token']
 
-    if(typeof token !== 'undefined'){
-        jwt.verify(token,"myApp",(err,decoded)=>{
-            if (err){
-                return res.sendStatus(403)
-            }
-            req.appId=decoded.appId
-            next()
-        })
+    if(!token){
+     return res.status(403).json({message: 'Token not provided' })
     }
-    else{
-        res.sendStatus(403)
-    }
+
+    jwt.verify(token, "myApp", (err, decoded) => {
+        if (err) {
+          return res.status(401).json({ message: 'Invalid token' });
+        }
+    
+        req.userId = decoded.appId; // Assuming you're using clientID as the user identifier
+        next();
+      });
+ 
 }
+export default verifyToken

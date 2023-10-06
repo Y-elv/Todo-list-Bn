@@ -7,7 +7,7 @@ const router=express.Router()
 router.use(bodyParser.json())
 
 router.post("/register",registerApp)
-router.post("/create",createTask)
+router.post("/create",verifyToken,createTask)
 router.get("/readAll",readAllTask)
 router.get("/read/:taskId",readTaskById)
 router.patch("/update/:taskId",updateTaskById)
