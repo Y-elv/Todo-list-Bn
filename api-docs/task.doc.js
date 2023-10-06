@@ -2,6 +2,7 @@
 const createTask = {
     tags: ['Task'],
     description: "create a task",
+    security: [{ apiKey: [] }],
     requestBody: {
         content: {
             "multipart/form-data": {

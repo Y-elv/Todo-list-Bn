@@ -1,4 +1,4 @@
-import swaggerUi from "swagger-ui-express"
+
 import swaggerJSDoc from "swagger-jsdoc"
 import {welcomeRouteDocs} from "./welcome.doc.js"
 import {taskRouteDocs} from "./task.doc.js"
@@ -36,13 +36,11 @@ const options = {
       },
       paths: {...taskRouteDocs,...welcomeRouteDocs},
     },
-    apis: ['../routes/**/*.js'],
+    apis: ['routes/*.js'],
   }
 
 const swaggerSpec = swaggerJSDoc(options);
 
-const swaggerDocs = (app) =>{
-    app.use("/api-docs",swaggerUi.serve,swaggerUi.setup(swaggerSpec));
-}
 
-export default swaggerDocs;
+
+export default swaggerSpec;

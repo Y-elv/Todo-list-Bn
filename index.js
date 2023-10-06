@@ -5,10 +5,11 @@ import mongoose from "mongoose";
 import dotenv from "dotenv"
 import task from "./routes/route_task.js"
 import swaggerDocs from "./api-docs/swagger.js"
-
+import swaggerUi from "swagger-ui-express"
 const app=express()
-app.use(cors({origin:"*"}))
 
+app.use(cors({origin:"*"}))
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs ));
 dotenv.config()
 
 app.use("/api/v1/task",task)
@@ -32,4 +33,3 @@ connectToMongdb()
 
 })
 
-swaggerDocs(app)
