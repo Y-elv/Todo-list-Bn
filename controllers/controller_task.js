@@ -1,5 +1,4 @@
 import TaskModel from "../models/model_task.js"
-import generateToken from "../utils/tokenUtils.js"
 
 const createTask = (req, res) => {
    try{
@@ -12,7 +11,7 @@ const createTask = (req, res) => {
         completed:data.completed,
     })
 
-    taskInstance.appId = req.appId; 
+   
 
     taskInstance.save()
     .then((data)=>{
