@@ -9,7 +9,7 @@ const createTask = {
         name: 'x-access-token', 
         required: true,
         schema: {
-            type: 'string',
+            type: 'String',
         },
         description: 'Access token',
     }
@@ -21,16 +21,16 @@ const createTask = {
                     type: "object",
                     properties: {
                         title: {
-                            type: "string",
+                            type: 'String',
                             
                         },
                         description: {
-                            type:"string",
+                            type:'String',
                            
                         },
                         dueDate: {
-                            type:"string" ,
-                            format: "date-time" 
+                            type:'String',
+                            
                             
                         },
                         completed: {

@@ -8,7 +8,9 @@ import swaggerDocs from "./api-docs/swagger.js"
 import swaggerUi from "swagger-ui-express"
 const app=express()
 
-app.use(cors())
+app.use(cors({
+    origin: '*',
+  }));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs ));
 dotenv.config()
 
