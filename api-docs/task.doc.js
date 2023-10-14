@@ -2,7 +2,12 @@
 const createTask = {
     tags: ['Task'],
     description: "create a task",
-    security: [{ apiKey: [] }],
+    security:[
+        {
+             bearerAuth: [],
+        }
+    ],
+      
     parameters: [  
     {
         in: 'header',
