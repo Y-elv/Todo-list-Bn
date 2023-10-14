@@ -1,10 +1,11 @@
-let tokenStore ={}
+
 
 function storeToken (appId,token){
-tokenStore[appId]=token
+localStorage.setItem("jwtToken",token)
+localStorage.setItem("appId",appId)
 }
 
-function getToken(appId){
+function retrieveToken(appId){
 return tokenStore[appId]
 }
-export {storeToken,getToken}
+export {storeToken,retrieveToken}

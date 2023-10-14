@@ -8,17 +8,8 @@ const createTask = {
         }
     ],
       
-    parameters: [  
-    {
-        in: 'header',
-        name: 'x-access-token', 
-        required: true,
-        schema: {
-            type: 'String',
-        },
-        description: 'Access token',
-    }
-],
+
+
     requestBody: {
         content: {
             "multipart/form-data": {
