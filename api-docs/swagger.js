@@ -2,7 +2,7 @@
 import swaggerJSDoc from "swagger-jsdoc"
 import {welcomeRouteDocs} from "./welcome.doc.js"
 import {taskRouteDocs} from "./task.doc.js"
-
+import { registerRouteDocs } from "./registerApp.js"
 const options = {
     definition: {
       openapi: '3.0.0',
@@ -21,6 +21,7 @@ const options = {
       tags: [
         
         { name: 'landing page', description: 'landing Routes' },
+        { name: 'Register app', description: 'Registering apps' },
         { name: 'Task', description: 'task Routes' }
        
         
@@ -34,7 +35,7 @@ const options = {
           },
         },
       },
-      paths: {...taskRouteDocs,...welcomeRouteDocs},
+      paths: {...taskRouteDocs,...welcomeRouteDocs,...registerRouteDocs},
     },
     apis: ['routes/*.js'],
   }
