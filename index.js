@@ -6,10 +6,10 @@ import dotenv from "dotenv"
 import task from "./routes/route_task.js"
 import swaggerDocs from "./api-docs/swagger.js"
 import swaggerUi from "swagger-ui-express"
-import cookieParser from "cookie-parser";
+
 const app=express()
 
-app.use(cookieParser());
+app.use(express.json());
 
 app.use(cors({
     origin: '*',

@@ -4,7 +4,7 @@ import generateToken from "../utils/tokenUtils.js"
 const registerApp =(req,res)=>{
     try{
 const {appName,appId} =req.body
-const token =generateToken(appId,appName,res)
+const token =generateToken(appId,appName)
 
 const registerAppInstance=new registerAppModel({
 appId,

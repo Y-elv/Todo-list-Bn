@@ -1,8 +1,8 @@
 
 import swaggerJSDoc from "swagger-jsdoc"
-import {welcomeRouteDocs} from "./welcome.doc.js"
-import {taskRouteDocs} from "./task.doc.js"
-import { registerRouteDocs } from "./registerApp.js"
+import {welcomeRouteDocs} from "./welcome.doc"
+import {taskRouteDocs} from "./task.doc"
+import { registerRouteDocs } from "./registerApp.doc"
 const options = {
     definition: {
       openapi: '3.0.0',
@@ -38,7 +38,7 @@ const options = {
           },
         },
       },
-      paths: {...taskRouteDocs,...welcomeRouteDocs,...registerRouteDocs},
+      paths: {...taskRouteDocs,...welcomeRouteDocs,...registerRouteDocs },
     },
     apis: ['..routes/**/*.js'],
   }

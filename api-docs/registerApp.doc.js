@@ -5,16 +5,16 @@ const registerAppDocs = {
     
     requestBody: {
         content: {
-            "multipart/form-data": {
+            "application/json": {
                 schema: {
                     type: "object",
                     properties: {
                         appId: {
-                            type: String,
+                            type: "String",
                             required: true,
                         },
                         appName: {
-                            type: String,
+                            type: "String",
                             required: true,
                         },
                     
@@ -46,3 +46,37 @@ export const registerRouteDocs = {
         post:registerAppDocs
     }
 }
+
+// export default  {
+
+//     '/api/v1/task/register':{
+//         post:{
+//             tags: ['Register app'],
+//             description :'Registering apps',
+//             requestBody:{
+//                 content:{
+//                     'application/json':{
+//                         schema:{
+//                             type:'object'
+                          
+//                         },
+//                         example:{
+//                             appId:'app123',
+//                             appName:'AUCA-SYSTEM'
+//                         }
+//                     }
+//                 },
+//                 required:true
+//             }
+                
+            
+//         },
+//         responses:{
+//             200:{
+//                 description:'ok'
+//             }
+
+//         }
+        
+//     }
+// }
