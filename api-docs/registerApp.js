@@ -1,7 +1,7 @@
 
-const registerApp = {
+const registerAppDocs = {
     tags: ['Register app'],
-    description: "register app",
+    description: "Registering apps",
     
     requestBody: {
         content: {
@@ -10,12 +10,12 @@ const registerApp = {
                     type: "object",
                     properties: {
                         appId: {
-                            type: 'String',
-                            
+                            type: String,
+                            required: true,
                         },
-                      appName: {
-                            type:'String',
-                           
+                        appName: {
+                            type: String,
+                            required: true,
                         },
                     
                     }
@@ -43,6 +43,6 @@ const registerApp = {
 export const registerRouteDocs = {
 
     "/api/v1/task/register": {
-        post:registerApp
+        post:registerAppDocs
     }
 }

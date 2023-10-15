@@ -4,8 +4,8 @@ const createTask = {
     description: "create a task",
     security:[
         {
-             bearerAuth: [],
-        }
+            token: [],
+          },
     ],
       
 

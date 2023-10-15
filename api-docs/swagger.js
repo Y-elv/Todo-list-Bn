@@ -31,13 +31,16 @@ const options = {
           token: {
             type: 'apiKey',
             scheme: 'bearer',
+            bearerFormat: 'JWT',
+            name:"token",
+            in:"header"
            
           },
         },
       },
       paths: {...taskRouteDocs,...welcomeRouteDocs,...registerRouteDocs},
     },
-    apis: ['routes/*.js'],
+    apis: ['..routes/**/*.js'],
   }
 
 const swaggerSpec = swaggerJSDoc(options);
