@@ -5,7 +5,7 @@ const registerAppDocs = {
     
     requestBody: {
         content: {
-            "application/json": {
+            "multiple/form-data": {
                 schema: {
                     type: "object",
                     properties: {
