@@ -8,10 +8,10 @@ router.use(bodyParser.json())
 
 router.post("/register",registerApp)
 router.post("/create",verifyToken,createTask)
-router.get("/readAll",readAllTask)
-router.get("/read/:taskId",readTaskById)
-router.patch("/update/:taskId",updateTaskById)
-router.delete("/deleteAll",deleteAllTask)
-router.delete("/delete/:taskId",deleteTaskById)
+router.get("/readAll",verifyToken,readAllTask)
+router.get("/read/:taskId",verifyToken,readTaskById)
+router.patch("/update/:taskId",verifyToken,updateTaskById)
+router.delete("/deleteAll",verifyToken,deleteAllTask)
+router.delete("/delete/:taskId",verifyToken,deleteTaskById)
 
 export default router
